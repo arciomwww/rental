@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd"
+        logicalFilePath="./liquibase/sql">
+
+    <changeSet id="role" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="role"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/01.Role.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="user" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="users"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/02.Users.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="userroles" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="user_roles"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/03.UserRoles.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="location" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="location"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/04.Location.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="carmodel" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="car_model"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/05.CarModel.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+
+    <changeSet id="car" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="car"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="sql/06.Car.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="rental" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="rental"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="sql/07.Rental.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="feedback" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="feedback"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="sql/08.Feedback.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="transaction" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="transaction"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="sql/09.Transaction.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="accounts" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="account"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="sql/10.Account.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="application_accounts" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="application_account"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="sql/11.ApplicationAccount.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="add_indexes_car" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="car"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/add_indexes_car.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="add_indexes_feedback" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="feedback"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/add_indexes_feedback.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="add_indexes_rental" author="Artsiom Vyshynski">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="rental"/>
+            </not>
+        </preConditions>
+        <sqlFile encoding="utf8" path="./sql/add_indexes_rental.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog> 
